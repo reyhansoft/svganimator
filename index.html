@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Draw SVG Logo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+
+    <style>
+        iframe { border: none; width: 100%; height: 100%; }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="columns">
+            <div class="column col-6 col-md-12">
+                <iframe id="output"></iframe>
+            </div>
+            <div class="column col-6  col-md-12">
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" style="display: inline-block;" for="color">Stroke Color</label>
+                        <a class="btn btn-sm" href="javascript:" id="btn-picker">toggle color picker</a>
+                        <div id="picker" style="margin-top: 10px;"></div>
+                        <input class="form-input" style="margin-top: 10px;" type="text" id="color" placeholder="Color" value="#7289DA">
+                    </div>
+                </div>
+                <div class="column col-12" style="margin: 10px 0;">
+                    <input type="file" id="file" />
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Stroke dasharray</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="1000" min="0" id="dasharray" />
+                    </div>
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Stroke dashoffset from</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="2000" min="0" id="dashoffsetFrom" />
+                    </div>
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Stroke dashoffset to</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="2000" min="0" id="dashoffsetTo"/>
+                    </div>
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Stroke width ( pixel )</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="20" min="0" id="width" />
+                    </div>
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Animation duration ( seconds )</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="20" min="0" id="duration" />
+                    </div>
+                </div>
+                <div class="column col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="color">Original SVG delay ( miliseconds )</label>
+                        <input class="slider tooltip" oninput="this.setAttribute('value', this.value);" type="range" max="10000" min="0" id="delay" />
+                    </div>
+                </div>
+            </div>
+            <div class="column col-12" style="margin-top: 15px;">
+                <div class="columns">
+                    <div class="column col-4 col-md-12">
+                        <h5>HTML</h5>
+                        <div >
+                            <pre><code class="language-html" id="html"></code></pre>
+                        </div>
+                    </div>
+                    <div class="column col-4 col-md-12">
+                        <h5>CSS</h5>
+                        <div>
+                            <pre><code class="language-css" id="css"></code></pre>
+                        </div>
+                    </div>
+                    <div class="column col-4 col-md-12">
+                        <h5>JavaScript</h5>
+                        <div >
+                            <pre><code class="language-javascript" id="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
